@@ -1,0 +1,32 @@
+<div class="container">
+<div class="title">
+    <h1>{{data.name}}</h1>
+</div>
+<div class="content">
+    <p>
+        Height: {{data.height}} cm
+    </p>
+    <p>
+        Weight: {{data.mass}} kg
+    </p>
+    <p>
+        Date of birth: {{data.birth_year}}
+    </p>
+    <p>
+        Number of movies: {{data.films.length}}
+    </p>
+    <p>
+        Homeworld: {{planet.name}}
+    </p>
+    <p>
+        Terrain: {{planet.terrain}}
+    </p>
+    <p>
+        Climate: {{planet.climate}}
+    </p>
+</div>
+
+<div class="actions">
+    <button (click)="closeModal()">Close</button>
+</div>
+</div>

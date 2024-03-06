@@ -1,0 +1,26 @@
+<app-dialog *ngIf="modalService.showDialog" [data]="peopleData"></app-dialog>
+
+
+<div *ngIf="isLoading">
+    <img class="center" src="../../assets/5.gif" alt="">
+</div>
+<input *ngIf=!isError type="text" placeholder="enter character name..." (input)="getFilteredData($any($event).target.value)">
+<div *ngIf="!isLoading && ! isError">
+    <div *ngFor="let character of characterList; index as i">
+        <div class="card" (click)="openModal(character.name)">
+            <h5>
+                {{character.name}}
+            </h5>
+            <img class="center" src="https://picsum.photos/100">
+        </div>
+    </div>
+    <span>
+        <button (click)="changePage('prev')" [disabled]="characterList.length > 10">prev</button>
+        <button (click)="changePage('next')" [disabled]="characterList.length > 10">next</button>
+    </span>
+</div>
+
+<div *ngIf=isError class="center">
+    <h1>{{errorText}}</h1>
+</div>
+
